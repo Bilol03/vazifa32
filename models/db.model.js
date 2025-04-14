@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import {pool} from '../config/db.config.js'
 
 let Model = {
   find: function () {
@@ -6,8 +6,9 @@ let Model = {
   },
 
   createStudent: function (body) {
+    
     return pool.query(
-      "insert into students(name, phone) values($1, $2) RETURNING *",
+      "INSERT INTO students(name, phone) VALUES($1, $2) RETURNING *",
       [body.name, body.phone]
     )
   },
