@@ -14,7 +14,7 @@ let Model = {
   },
 
   createCourses: function (body) {
-    return pool.query("INSERT INTO course(title, level) values($1, $2) RETURNING *",
+    return pool.query("INSERT INTO courses(title, level) values($1, $2) RETURNING *",
         [body.title, body.level]
     )
   },
