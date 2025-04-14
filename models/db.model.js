@@ -2,7 +2,7 @@ import {pool} from '../config/db.config.js'
 
 let Model = {
   find: function () {
-    return pool.query("SELECT * FROM student_course s_c JOIN courses c ON s_c.course_id=c.id JOIN students s ON s_c.student_id=s.id");
+    return pool.query("SELECT * FROM student_courses s_c JOIN courses c ON s_c.course_id=c.id JOIN students s ON s_c.student_id=s.id");
   },
 
   createStudent: function (body) {
